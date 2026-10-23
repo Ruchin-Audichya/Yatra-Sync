@@ -23,7 +23,7 @@ Canvas-inspired identity, original generated Jaipur artwork, mobile quick naviga
 Requires Node.js 22.14+ and npm. No external API keys or accounts.
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/Ruchin-Audichya/Yatra-Sync.git
 cd Yatra-Sync
 npm install
 cp .env.example .env.local
