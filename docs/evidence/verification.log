@@ -1,0 +1,180 @@
+Language: typescript
+Command:  npm run verify && npm run test:e2e && npm run bench -- 50 42
+Source:   explicit --cmd
+Running...
+------------------------------------------------------------
+
+> yatri-sync@1.0.0 verify
+> npm run lint && npm run typecheck && npm run test && npm run build
+
+
+> yatri-sync@1.0.0 lint
+> eslint . --max-warnings 0
+
+
+> yatri-sync@1.0.0 typecheck
+> tsc --noEmit
+
+
+> yatri-sync@1.0.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /home/ruchinaudichya/Yatri-Sync
+
+ ✓ tests/integration.test.ts (45 tests) 6510ms
+   ✓ persisted trips, identity and authorization > hashes and validates passwords without storing plain text  500ms
+   ✓ real local account credentials and session boundaries > authenticates the stored password and rejects a wrong one  438ms
+ ✓ tests/matching.test.ts (58 tests) 326ms
+ ✓ tests/fare.test.ts (35 tests) 178ms
+
+ Test Files  3 passed (3)
+      Tests  138 passed (138)
+   Start at  17:15:32
+   Duration  10.20s (transform 540ms, setup 0ms, collect 1.79s, tests 7.01s, environment 2ms, prepare 531ms)
+
+
+> yatri-sync@1.0.0 build
+> next build --webpack
+
+▲ Next.js 16.4.2 (webpack)
+- Environments: .env.local
+✓ Running next.config.ts took 74ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 8.2s
+  Running TypeScript ...
+  Finished TypeScript in 8.1s ...
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/2) ...
+✓ Generating static pages using 5 workers (2/2) in 1562ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /_not-found
+├ ƒ /[[...slug]]
+└ ƒ /api/[...path]
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+
+> yatri-sync@1.0.0 test:e2e
+> playwright test
+
+
+Running 9 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/journeys.spec.ts:76:1 › onboarding → persisted request → computed compatible groups (12.4s)
+  ✓  2 [chromium] › tests/e2e/journeys.spec.ts:104:1 › individual acceptance → mutual lock → pickup reveal (10.8s)
+  ✓  3 [chromium] › tests/e2e/journeys.spec.ts:137:1 › cancellation invalidates stale terms and recalculates current fares (8.7s)
+  ✓  4 [chromium] › tests/e2e/journeys.spec.ts:170:1 › report and block is persisted and visible to permitted administrator (8.6s)
+  ✓  5 [chromium] › tests/e2e/journeys.spec.ts:198:1 › benchmark uses the same synthetic input and exports JSON and CSV (6.2s)
+  ✓  6 [chromium] › tests/e2e/journeys.spec.ts:235:1 › external handoff → actual paise → all fare reviews → manual settlement (11.9s)
+  ✓  7 [chromium] › tests/e2e/journeys.spec.ts:284:1 › mobile 360px, Hindi essentials and theme remain usable (5.0s)
+  ✓  8 [chromium] › tests/e2e/journeys.spec.ts:311:1 › HTTP rejects cross-site writes and non-member group requests (6.3s)
+  ✓  9 [chromium] › tests/e2e/journeys.spec.ts:325:1 › concurrent invitations reserve each passenger once and keep pickup private (5.5s)
+
+  9 passed (1.4m)
+(node:403709) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:403709) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+> yatri-sync@1.0.0 bench
+> tsx scripts/bench.ts 50 42
+
+{
+  "synthetic": true,
+  "seed": 42,
+  "count": 50,
+  "disruption": "none",
+  "graphHubs": 9,
+  "inputIds": [
+    "sim-42-0",
+    "sim-42-1",
+    "sim-42-2",
+    "sim-42-3",
+    "sim-42-4",
+    "sim-42-5",
+    "sim-42-6",
+    "sim-42-7",
+    "sim-42-8",
+    "sim-42-9",
+    "sim-42-10",
+    "sim-42-11",
+    "sim-42-12",
+    "sim-42-13",
+    "sim-42-14",
+    "sim-42-15",
+    "sim-42-16",
+    "sim-42-17",
+    "sim-42-18",
+    "sim-42-19",
+    "sim-42-20",
+    "sim-42-21",
+    "sim-42-22",
+    "sim-42-23",
+    "sim-42-24",
+    "sim-42-25",
+    "sim-42-26",
+    "sim-42-27",
+    "sim-42-28",
+    "sim-42-29",
+    "sim-42-30",
+    "sim-42-31",
+    "sim-42-32",
+    "sim-42-33",
+    "sim-42-34",
+    "sim-42-35",
+    "sim-42-36",
+    "sim-42-37",
+    "sim-42-38",
+    "sim-42-39",
+    "sim-42-40",
+    "sim-42-41",
+    "sim-42-42",
+    "sim-42-43",
+    "sim-42-44",
+    "sim-42-45",
+    "sim-42-46",
+    "sim-42-47",
+    "sim-42-48",
+    "sim-42-49"
+  ],
+  "baseline": {
+    "eligible": 50,
+    "matched": 47,
+    "matchRate": 94,
+    "groups": 15,
+    "savingPaise": 1670250,
+    "meanWait": 5.5,
+    "medianWait": 5,
+    "meanDetour": 0,
+    "violations": 0,
+    "runtimeMs": 10.91
+  },
+  "optimizer": {
+    "eligible": 50,
+    "matched": 48,
+    "matchRate": 96,
+    "groups": 15,
+    "savingPaise": 1682550,
+    "meanWait": 2.4,
+    "medianWait": 0,
+    "meanDetour": 0,
+    "violations": 0,
+    "runtimeMs": 232
+  },
+  "cancellationRecovery": {
+    "attempted": 15,
+    "survivingGroups": 14
+  },
+  "assumptions": "Synthetic scenario — not live demand, traffic, cab pricing or proven real-world saving. Same inputs, graph, fare model and hard rules. Groups are proposed, never confirmed.",
+  "created": 1800000000000
+}
+
+------------------------------------------------------------
+VERDICT: PASS

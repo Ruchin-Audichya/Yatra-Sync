@@ -1,0 +1,8 @@
+node_modules
+.next
+.next-e2e
+data
+docs/evidence
+playwright-report
+test-results
+package-lock.json

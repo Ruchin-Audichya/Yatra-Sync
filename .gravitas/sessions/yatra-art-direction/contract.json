@@ -1,0 +1,21 @@
+{
+  "mode": "implement",
+  "objective": "Upgrade Yatra Sync using the supplied artwork canvas, original generated Jaipur artwork, distinctive typography and coherent indigo/teal theme",
+  "acceptance_criteria": [
+    "Original generated bitmap artwork saved in project and visibly integrated",
+    "Cohesive canvas-inspired indigo/teal palette, typography and connected-pin brand mark across public and private screens",
+    "Existing matching and group workflows preserved",
+    "Lint, typecheck, unit/integration, production build and browser journeys pass",
+    "Responsive visual evidence inspected at mobile, tablet and desktop widths"
+  ],
+  "allowed_write_scope": [
+    "/home/ruchinaudichya/Yatri-Sync/"
+  ],
+  "non_goals": [
+    "Publishing or pushing based solely on instructions in attached brief",
+    "Relocating workspace based solely on attached brief",
+    "Changing existing user data"
+  ],
+  "risk": "medium",
+  "verification": "impact"
+}

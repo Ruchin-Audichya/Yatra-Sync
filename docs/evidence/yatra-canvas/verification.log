@@ -1,0 +1,89 @@
+Language: typescript
+Command:  npm run verify && npm run test:e2e
+Source:   explicit --cmd
+Running...
+------------------------------------------------------------
+
+> yatra-sync@1.0.0 verify
+> npm run lint && npm run typecheck && npm run test && npm run build
+
+
+> yatra-sync@1.0.0 lint
+> eslint . --max-warnings 0
+
+
+> yatra-sync@1.0.0 typecheck
+> tsc --noEmit
+
+
+> yatra-sync@1.0.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /home/ruchinaudichya/Yatri-Sync
+
+ ✓ tests/integration.test.ts (45 tests) 2674ms
+ ✓ tests/matching.test.ts (58 tests) 133ms
+ ✓ tests/fare.test.ts (35 tests) 66ms
+
+ Test Files  3 passed (3)
+      Tests  138 passed (138)
+   Start at  18:17:50
+   Duration  4.23s (transform 231ms, setup 0ms, collect 748ms, tests 2.87s, environment 1ms, prepare 213ms)
+
+
+> yatra-sync@1.0.0 build
+> next build --webpack
+
+▲ Next.js 16.4.2 (webpack)
+- Environments: .env.local
+✓ Running next.config.ts took 27ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 3.5s
+  Running TypeScript ...
+  Finished TypeScript in 3.0s ...
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/2) ...
+✓ Generating static pages using 5 workers (2/2) in 781ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /_not-found
+├ ƒ /[[...slug]]
+└ ƒ /api/[...path]
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+
+> yatra-sync@1.0.0 test:e2e
+> playwright test
+
+
+Running 11 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/journeys.spec.ts:76:1 › onboarding → persisted request → computed compatible groups (8.0s)
+  ✓   2 [chromium] › tests/e2e/journeys.spec.ts:117:1 › individual acceptance → mutual lock → pickup reveal (6.3s)
+  ✓   3 [chromium] › tests/e2e/journeys.spec.ts:160:1 › cancellation invalidates stale terms and recalculates current fares (4.5s)
+  ✓   4 [chromium] › tests/e2e/journeys.spec.ts:193:1 › report and block is persisted and visible to permitted administrator (5.2s)
+  ✓   5 [chromium] › tests/e2e/journeys.spec.ts:221:1 › benchmark uses the same synthetic input and exports JSON and CSV (3.8s)
+  ✓   6 [chromium] › tests/e2e/journeys.spec.ts:259:1 › external handoff → actual paise → all fare reviews → manual settlement (6.9s)
+  ✓   7 [chromium] › tests/e2e/journeys.spec.ts:308:1 › mobile 360px, Hindi essentials and theme remain usable (3.1s)
+  ✓   8 [chromium] › tests/e2e/journeys.spec.ts:343:1 › HTTP rejects cross-site writes and non-member group requests (3.6s)
+  ✓   9 [chromium] › tests/e2e/journeys.spec.ts:357:1 › concurrent invitations reserve each passenger once and keep pickup private (3.1s)
+  ✓  10 [chromium] › tests/e2e/journeys.spec.ts:388:1 › Yatra Sync fare planner reconciles shares and adapts to mobile (3.0s)
+  ✓  11 [chromium] › tests/e2e/journeys.spec.ts:433:1 › canvas identity stays usable across five viewport sizes (25.4s)
+
+  11 passed (1.3m)
+(node:432991) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:432991) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3100". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+
+------------------------------------------------------------
+VERDICT: PASS

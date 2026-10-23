@@ -1,0 +1,16 @@
+{
+  "resolved_findings": [
+    {
+      "finding": "360px landing header overflow",
+      "correction": "Hide decorative logo tagline on mobile and fit header controls"
+    },
+    {
+      "finding": "Map labels and match invitation contrast",
+      "correction": "Use muted map text and explicit theme-aware invitation colors"
+    },
+    {
+      "finding": "New fare test matched the Next route announcer alert",
+      "correction": "Scope the assertion to the visible validation text"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+Language: typescript
+Command:  npm run lint && npm run typecheck && npm run test:e2e
+Source:   explicit --cmd
+Running...
+------------------------------------------------------------
+
+> yatra-sync@1.0.0 lint
+> eslint . --max-warnings 0
+
+
+> yatra-sync@1.0.0 typecheck
+> tsc --noEmit
+
+
+> yatra-sync@1.0.0 test:e2e
+> playwright test
+
+
+Running 10 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/journeys.spec.ts:76:1 › onboarding → persisted request → computed compatible groups (9.4s)
+  ✓   2 [chromium] › tests/e2e/journeys.spec.ts:117:1 › individual acceptance → mutual lock → pickup reveal (6.9s)
+  ✓   3 [chromium] › tests/e2e/journeys.spec.ts:160:1 › cancellation invalidates stale terms and recalculates current fares (5.5s)
+  ✓   4 [chromium] › tests/e2e/journeys.spec.ts:193:1 › report and block is persisted and visible to permitted administrator (5.3s)
+  ✓   5 [chromium] › tests/e2e/journeys.spec.ts:221:1 › benchmark uses the same synthetic input and exports JSON and CSV (3.7s)
+  ✓   6 [chromium] › tests/e2e/journeys.spec.ts:259:1 › external handoff → actual paise → all fare reviews → manual settlement (6.7s)
+  ✓   7 [chromium] › tests/e2e/journeys.spec.ts:308:1 › mobile 360px, Hindi essentials and theme remain usable (2.8s)
+  ✓   8 [chromium] › tests/e2e/journeys.spec.ts:336:1 › HTTP rejects cross-site writes and non-member group requests (3.6s)
+  ✓   9 [chromium] › tests/e2e/journeys.spec.ts:350:1 › concurrent invitations reserve each passenger once and keep pickup private (3.4s)
+  ✓  10 [chromium] › tests/e2e/journeys.spec.ts:381:1 › Yatra Sync fare planner reconciles shares and adapts to mobile (2.9s)
+
+  10 passed (55.5s)
+(node:421674) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:421674) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+------------------------------------------------------------
+VERDICT: PASS

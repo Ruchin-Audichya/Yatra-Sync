@@ -1,0 +1,50 @@
+{
+  "status": "verified",
+  "validator": "Gravitas verify.py --cmd npm run verify && npm run test:e2e",
+  "results": {
+    "lint": "pass",
+    "typecheck": "pass",
+    "unit_and_integration": 138,
+    "browser_journeys": 11,
+    "production_build": "pass"
+  },
+  "responsive_widths": [
+    360,
+    390,
+    768,
+    1280,
+    1440
+  ],
+  "responsive_routes": [
+    "/",
+    "/app",
+    "/app/matches",
+    "/app/fare",
+    "/app/trips/new",
+    "/app/profile",
+    "/app/history"
+  ],
+  "manual_visual_review": [
+    "landing-360.png",
+    "landing-390.png",
+    "landing-768.png",
+    "landing-1280.png",
+    "landing-1440.png",
+    "dashboard-desktop.png",
+    "discovery-desktop.png",
+    "group-mobile.png",
+    "fare-mobile.png",
+    "onboarding-desktop.png"
+  ],
+  "evidence_directory": "docs/evidence/yatra-canvas",
+  "artwork": {
+    "path": "public/art/jaipur-route-hero.webp",
+    "sha256": "0feabab17a67cb6a1d78088dd99ebb2cf499ae5f074ab52b0976c55b16afe66b",
+    "tool": "built-in image generation; model selector not exposed"
+  },
+  "limitations": [
+    "Illustrative graph remains the route model; hero art is decorative",
+    "No external deployment or remote push performed",
+    "Open Graph base URL defaults to localhost until a deployment URL is configured"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "validator": "/home/ruchinaudichya/.agents/skills/gravitas/scripts/verify.py",
+  "evidence": "docs/evidence/verification.log",
+  "criteria": [
+    {
+      "criterion": "Persisted keyless sign-in and trip CRUD with server authorization",
+      "evidence": [
+        "tests/integration.test.ts",
+        "tests/e2e/journeys.spec.ts"
+      ],
+      "status": "PASS"
+    },
+    {
+      "criterion": "Directed constrained matching with exact integer fare allocation",
+      "evidence": [
+        "tests/matching.test.ts",
+        "tests/fare.test.ts",
+        "docs/evidence/benchmark.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "criterion": "Transactional mutual consent and versioned cancellation recovery",
+      "evidence": [
+        "tests/integration.test.ts",
+        "tests/e2e/journeys.spec.ts"
+      ],
+      "status": "PASS"
+    },
+    {
+      "criterion": "Manual booking and settlement with truthful labels",
+      "evidence": [
+        "tests/e2e/journeys.spec.ts",
+        "docs/evidence/group-confirmed.png"
+      ],
+      "status": "PASS"
+    },
+    {
+      "criterion": "Responsive demo simulator, benchmark exports and documentation",
+      "evidence": [
+        "docs/evidence/mobile-hindi-dark.png",
+        "docs/evidence/benchmark-studio.png",
+        "README.md",
+        "FEATURE_MATRIX.md",
+        "DEMO_SCRIPT.md"
+      ],
+      "status": "PASS"
+    },
+    {
+      "criterion": "Lint, typecheck, unit/integration, build and browser acceptance pass",
+      "evidence": [
+        "docs/evidence/verification.log"
+      ],
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Yatra Sync",
+  "short_name": "Yatra Sync",
+  "description": "Community passenger coordination",
+  "start_url": "/app",
+  "display": "standalone",
+  "background_color": "#f4f3ff",
+  "theme_color": "#5146ff",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
